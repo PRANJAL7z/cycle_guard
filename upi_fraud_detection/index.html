@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CycleGuard - Fraud Detection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top logo header -->
+  <div class="cycleguard-logo-header">
+    <div class="cycleguard-logo-icon">🛡️</div>
+    <span class="cycleguard-logo-text">CYCLE-GUARD</span>
+  </div>
+
+  <!-- Fraud alert notification -->
+  <div id="fraud-alert" class="fraud-alert hidden"></div>
+  <!-- Dashboard container -->
+  <div class="container">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main-panel" id="main-panel"></main>
+  </div>
+  <div id="pin-overlay" style="position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:#232d41cc;display:flex;align-items:center;justify-content:center;">
+    <form id="pin-form" style="background:#fff;padding:2rem 2.5rem;border-radius:1rem;box-shadow:0 4px 24px #0008;display:flex;flex-direction:column;align-items:center;min-width:320px;">
+      <h2 style="margin-bottom:1rem;color:#232d41;">Secure Access Required</h2>
+      <p style="margin-bottom:1.2rem;color:#334155;text-align:center;">
+        For your security, please authenticate with your  PIN to access the CycleGuard Fraud Detection Dashboard.
+      </p>
+      <input id="pin-input" type="password" maxlength="6" pattern="\d{4,6}" placeholder="Enter your 4-6 digit PIN" required style="padding:0.7rem 1rem;font-size:1.2rem;border-radius:0.5rem;border:1px solid #ccc;margin-bottom:1rem;text-align:center;width:180px;">
+      <button type="submit" style="background:#2563eb;color:#fff;padding:0.6rem 2rem;border:none;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;">Unlock Dashboard</button>
+      <div id="pin-error" style="color:#e11d48;margin-top:1rem;display:none;">Incorrect PIN. Please try again.</div>
+      <div style="margin-top:1.5rem;font-size:0.95em;color:#64748b;text-align:center;">
+        This portal is protected. Only authorized users may proceed.
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

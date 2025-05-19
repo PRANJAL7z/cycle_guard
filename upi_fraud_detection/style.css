@@ -1,0 +1,514 @@
+
+/* Dashboard Layout & Theme */
+body,
+.bg-gray-50 {
+  background: #181f2a !important;
+  color: #fff !important;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  font-size: 1rem;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Card panels for sidebar */
+.card {
+  background: #232d41;
+  border-radius: 0.75rem;
+  padding: 1.3rem 0.7rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px #0002;
+}
+.card-title {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #e0e7ef;
+  letter-spacing: 0.01em;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Company heading */
+.cycleguard-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  color: #60a5fa;
+  margin-bottom: 0.7rem;
+  display: block;
+}
+
+/* User list */
+.user-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.user-list li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #232d41;
+  font-size: 1rem;
+}
+
+/* Forms */
+.user-form,
+.txn-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Hazy/dull input backgrounds */
+.user-form input,
+.user-form select,
+.txn-form-vertical input,
+.txn-form-vertical select {
+  background: #232d41;
+  color: #fff;
+  border: 1px solid #374151;
+  border-radius: 0.4rem;
+  padding: 0.6rem;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.user-form input:focus,
+.user-form select:focus,
+.txn-form-vertical input:focus,
+.txn-form-vertical select:focus {
+  border: 1.5px solid #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f666;
+}
+
+.user-form button,
+.txn-form button {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.6rem 1.3rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.user-form button:hover,
+.txn-form button:hover {
+  background: #2563eb;
+}
+
+/* Vertical transaction form */
+.txn-form-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.form-label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 0.1rem;
+  color: #e0e7ef;
+  letter-spacing: 0.01em;
+}
+.txn-form-vertical button {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.6rem 1.3rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.txn-form-vertical button:hover {
+  background: #2563eb;
+}
+
+/* Main panel */
+.main-panel {
+  flex: 1;
+  background: #232d41;
+  border-radius: 0.75rem;
+  padding: 1.3rem 0.7rem;
+  box-shadow: 0 2px 8px #0002;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.tab {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.9rem 1.7rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s;
+}
+.tab.active,
+.tab:hover {
+  background: #20293a;
+}
+.tab-badge {
+  background: #f59e42;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 1rem;
+  padding: 0.1rem 0.7rem;
+  margin-left: 0.5rem;
+}
+
+/* Tab content */
+.tab-content {
+  background: #20293a;
+  border-radius: 0.5rem;
+  padding: 1.3rem 0.7rem;
+  min-height: 350px;
+  font-size: 1rem;
+}
+
+/* Fraud alert notification */
+.fraud-alert {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f59e42;
+  color: #fff;
+  padding: 1.3rem 2.4rem 1.3rem 2.4rem;
+  border-radius: 0.75rem;
+  font-size: 1.18rem;
+  font-weight: bold;
+  box-shadow: 0 4px 16px #0004;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.fraud-alert.hidden {
+  display: none;
+}
+.fraud-alert .fraud-btn {
+  background: #232d41;
+  color: #fff;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.6rem 1.3rem;
+  font-weight: bold;
+  font-size: 1.13rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  transition: background 0.2s;
+}
+.fraud-alert .fraud-btn:hover {
+  background: #1a2233;
+}
+
+/* Fraud cycle card styling */
+.fraud-cycle {
+  background: #a35a13;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.18rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  border: 1px solid #f59e42;
+  box-shadow: 0 2px 8px #0002;
+}
+.cycle-title {
+  font-weight: bold;
+  font-size: 1.18rem;
+}
+.cycle-risk {
+  background: #f59e42;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.2rem 0.8rem;
+  font-size: 1.05rem;
+  margin-left: 1rem;
+}
+.cycle-amount {
+  font-weight: bold;
+  font-size: 1.18rem;
+  margin-left: auto;
+}
+
+/* Stat boxes in visualization tab */
+.stat-box {
+  background: #22325a;
+  color: #c7d2fe;
+  border-radius: 0.5rem;
+  padding: 1.1rem 0.5rem;
+  flex: 1;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+.stat-box.stat-fraud {
+  background: #a35a13;
+  color: #fff;
+}
+.stat-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #232d41;
+  color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+th,
+td {
+  font-size: 0.95rem;
+  padding: 1.1rem 0.7rem;
+  border-bottom: 1px solid #374151;
+  background: #232d41;
+  color: #fff;
+}
+th {
+  font-weight: bold;
+  color: #e0e7ef;
+  letter-spacing: 0.01em;
+  font-size: 1.25rem;
+}
+tbody tr:nth-child(even) td {
+  background: #20293a;
+}
+thead {
+  background: #20293a;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Average and cycle amount displays */
+.average-amount, .cycle-amount {
+  font-size: 0.95rem;
+  margin-top: 0.7rem;
+  padding: 0.8rem 0.5rem;
+}
+
+/* Canvas (graph) styling */
+canvas {
+  display: block;
+  margin: 0 auto;
+  background: #181f2a;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px #0002;
+}
+
+/* Graph node color override (for orange suspicious nodes) */
+.graph-node-suspicious {
+  fill: #f59e42 !important;
+  stroke: #a35a13 !important;
+}
+.graph-node-normal {
+  fill: #2563eb !important;
+  stroke: #1e293b !important;
+}
+
+/* Add this to style the CycleGuard logo as a top heading */
+
+.cycleguard-logo-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 1.2rem 0 1.5rem 0;
+  margin-bottom: 1.2rem;
+  border-bottom: 2px solid #22325a;
+  background: transparent;
+}
+
+.cycleguard-logo-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb 60%, #60a5fa 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.1rem;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #0003;
+}
+
+.cycleguard-logo-text {
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  color: #60a5fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1;
+}
+
+/* Rotated border box for CycleGuard logo heading */
+
+.cycleguard-logo-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.cycleguard-logo-rotated-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.2rem 3.2rem;
+  background: rgba(34, 50, 90, 0.85); /* hazy blue background */
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px #0004;
+  overflow: visible;
+}
+.cycleguard-logo-rotated-box::before {
+  content: "";
+  position: absolute;
+  top: -10px; left: -10px; right: -10px; bottom: -10px;
+  border: 3px solid #60a5fa;
+  border-radius: 1.5rem;
+  transform: rotate(-4deg);
+  z-index: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+.cycleguard-logo-rotated-box .cycleguard-logo-icon,
+.cycleguard-logo-rotated-box .cycleguard-logo-text {
+  position: relative;
+  z-index: 1;
+}
+.cycleguard-logo-rotated-box .cycleguard-logo-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 2.3rem;
+  margin-right: 1.2rem;
+}
+.cycleguard-logo-rotated-box .cycleguard-logo-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #60a5fa;
+  letter-spacing: 0.06em;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1;
+}
+
+/* Utility Classes (Tailwind-like) */
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.space-x-2 > * + * { margin-left: 0.5rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+.text-lg { font-size: 1.25rem; line-height: 1.75rem; }
+.text-xl { font-size: 1.5rem; line-height: 1.75rem; }
+.text-2xl { font-size: 2rem; line-height: 2.2rem; }
+.font-bold { font-weight: bold; }
+.font-semibold { font-weight: 600; }
+.text-xs { font-size: 0.85rem; }
+.text-sm { font-size: 1rem; }
+.text-amber-800 { color: #92400e; }
+.text-green-600 { color: #16a34a; }
+.text-blue-500 { color: #3b82f6; }
+.text-blue-600 { color: #2563eb; }
+.text-white { color: #fff; }
+.text-gray-500 { color: #6b7280; }
+.text-gray-800 { color: #1f2937; }
+.text-gray-900 { color: #111827; }
+.bg-white { background: #fff; }
+.bg-gray-50 { background: #f9fafb; }
+.bg-gray-100 { background: #f3f4f6; }
+.bg-gray-200 { background: #e5e7eb; }
+.bg-gray-800 { background: #1f2937; }
+.bg-gray-900 { background: #111827; }
+.bg-blue-500 { background: #3b82f6; }
+.bg-blue-600 { background: #2563eb; }
+.bg-blue-700 { background: #1d4ed8; }
+.bg-amber-100 { background: #fef3c7; }
+.bg-amber-400 { background: #f59e42; }
+.rounded { border-radius: 0.25rem; }
+.rounded-full { border-radius: 9999px; }
+.rounded-lg { border-radius: 0.5rem; }
+.border { border-width: 1px; border-style: solid; border-color: #e5e7eb; }
+.border-amber-400 { border-color: #f59e42; }
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.ml-2 { margin-left: 0.5rem; }
+.ml-6 { margin-left: 1.5rem; }
+.btn {
+  padding: 0.6rem 1.3rem;
+  border: none;
+  border-radius: 0.25rem;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.btn:hover { background: #1d4ed8; }
+.btn-danger { background: #dc2626; }
+.btn-danger:hover { background: #b91c1c; }
+.hidden { display: none; }
+.shadow { box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.shadow-md { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+.transition-colors { transition: background 0.2s, color 0.2s; }
+/* Add at the end of style.css */
+#fraud-modal { animation: fadeIn 0.2s; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
